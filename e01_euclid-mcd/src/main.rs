@@ -31,3 +31,14 @@ fn main() {
     let n = input_number(1, &stdin);
     println!("The maximum common divisor between {} and {} is: {}", m, n, mcd(m,n));
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_mcd() {
+        assert_eq!(mcd(14, 15), 1);
+        assert_eq!(mcd(2 * 3 * 5 * 11 * 17, 3 * 7 * 11 * 13 * 19), 3 * 11);
+    }
+}
